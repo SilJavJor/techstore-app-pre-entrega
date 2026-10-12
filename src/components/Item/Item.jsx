@@ -12,7 +12,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useCart } from '../../context/CartContext/CartContext';
 import { StarInLineIcon } from '../UI/Icons/StarInLineIcon/StarInLineIcon';
-import { StarOutlineIcon } from '../UI/Icons/StarOutlineIcon/StarOutLineIcon';
+import { StarOutlineIcon } from '../UI/Icons/StarOutLineIcon/StarOutLineIcon';
 import styles from './Item.module.css';
 
 export function Item({ id, name, price, stock, image }) {
