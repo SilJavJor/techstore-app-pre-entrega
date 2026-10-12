@@ -1,5 +1,6 @@
 /* ==========================================================================
    Estilos de Footer.module.css
+   Descripcion: 
    Author: Silvio Jorda
    Date: 2026-09-30
 ========================================================================== */
@@ -19,7 +20,7 @@
   justify-content: space-between;
   align-items: center;
   gap: 1.5rem;
-  flex-wrap: wrap; /* Mantiene la adaptabilidad en pantallas pequeñas */
+  flex-wrap: wrap;
 }
 
 /* Columna Izquierda */
@@ -51,7 +52,7 @@
 }
 
 .teamLink {
-  color: #8de2d6; /* Verde / Turquesa seleccionado */
+  color: #8de2d6;
   font-weight: 600;
   font-size: 1rem;
   transition: color 0.2s ease, transform 0.2s ease;

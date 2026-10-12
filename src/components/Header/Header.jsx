@@ -1,5 +1,6 @@
 /* ==========================================================================
   Componente Header.jsx
+  Descripcion:
   Autor: Silvio Jorda
   Date: 2026-10-06
 ========================================================================== */
@@ -17,6 +18,7 @@ export function Header() {
 
   const handleLogout = () => {
     const confirmLogout = window.confirm('¿ Realmente desea cerrar la sesión ?');
+
     if (confirmLogout) {
       logout();
       navigate('/');

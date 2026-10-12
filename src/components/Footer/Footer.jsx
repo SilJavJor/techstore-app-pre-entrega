@@ -1,5 +1,6 @@
 /* ==========================================================================
   Componente Footer.jsx
+  Descripcion: 
   Autor: Silvio Jorda
   Date: 2026-09-30
 ========================================================================== */
@@ -14,6 +15,7 @@ export function Footer() {
         {/* Lado Izquierdo */}
         <div className={styles.brandInfo}>
           <h3 className={styles.title}>TechStore - Soluciones Tecnológicas</h3>
+
           <p className={styles.description}>
             Tu tienda de confianza para componentes informáticos y periféricos de alto rendimiento.
           </p>

@@ -1,5 +1,6 @@
 /* ==========================================================================
    Estilos de Item.module.css
+   Descripcion:
    Author: Silvio Jorda
    Date: 2026-09-30
 ========================================================================== */
@@ -63,7 +64,7 @@
 .buttonContainer {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem; /* O 8px: Genera la separación vertical entre botones */
+  gap: 0.5rem;
   width: 100%;
 }
 

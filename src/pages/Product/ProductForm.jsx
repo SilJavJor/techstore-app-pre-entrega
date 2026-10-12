@@ -1,9 +1,9 @@
 /* ==========================================================================
   Componente ProductForm.jsx
   Descripción: Formulario para el registro e ingreso de un nuevo producto 
-    con ID autogenerado, botón de limpiar y ventana de mensaje de confirmación.
+    con subida directa de imágenes a ImgBB mediante API Key.
   Autor: Silvio Jorda 
-  Date: 2026-09-30
+  Date: 2026-10-12
 ========================================================================== */
 
 import { useState } from 'react';
@@ -12,6 +12,9 @@ import { BroomIcon } from '../../components/UI/Icons/BroomIcon/BroomIcon';
 import { CheckIcon } from '../../components/UI/Icons/ChekIcon/CheckIcon';
 import { MessageBtnAccept } from '../Modal/MessageBtnAccept/MessageBtnAccept';
 import styles from './ProductForm.module.css';
+
+// API Key de ImgBB
+const IMGBB_API_KEY = import.meta.env.VITE_IMGBB_API_KEY;
 
 export function ProductForm() {
   const { addProduct, getNextProductId } = useData();
@@ -24,9 +27,14 @@ export function ProductForm() {
     description: '',
     price: '',
     stock: '',
-    category: '',
-    image: ''
+    category: ''
   });
+
+  // Estado para el archivo de imagen local seleccionado
+  const [imageFile, setImageFile] = useState(null);
+  
+  // Estado para gestionar la carga activa hacia ImgBB
+  const [uploading, setUploading] = useState(false);
 
   const [showModal, setShowModal] = useState(false);
   const [savedProductName, setSavedProductName] = useState('');
@@ -39,15 +47,55 @@ export function ProductForm() {
     }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  // Capturamos el archivo de imagen seleccionado desde el explorador
+  const handleFileChange = (e) => {
+    if (e.target.files && e.target.files[0]) {
+      setImageFile(e.target.files[0]);
+    }
+  };
+
+ const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  if (!imageFile) {
+    alert('Por favor, seleccioná una imagen para el producto.');
+    return;
+  }
+
+  try {
+    setUploading(true);
+
+    const formData = new FormData();
+    formData.append('image', imageFile);
+
+    const apiKey = import.meta.env.VITE_IMGBB_API_KEY;
+    
+    if (!apiKey) {
+      throw new Error('La API Key de ImgBB no está definida en el archivo .env');
+    }
+
+    const response = await fetch(`https://api.imgbb.com/1/upload?key=${IMGBB_API_KEY}`, {
+      method: 'POST',
+      body: formData
+    });
+
+    const data = await response.json();
+
+    // Si ImgBB devuelve success: false, imprimimos el error exacto en la consola
+    if (!data.success) {
+      console.error('Respuesta de error de ImgBB:', data);
+      throw new Error(data.error?.message || 'Error al subir la imagen a ImgBB.');
+    }
+
+    const imageUrl = data.data.url;
+    console.log('Imagen subida con éxito. URL:', imageUrl);
 
     const newProductData = {
       name: productData.name,
       price: Number(productData.price),
       stock: Number(productData.stock),
       category: productData.category,
-      image: productData.image,
+      image: imageUrl,
       description: productData.description,
       createdAt: new Date().toISOString()
     };
@@ -58,19 +106,28 @@ export function ProductForm() {
 
     setSavedProductName(productData.name);
     setShowModal(true);
-
     handleReset();
-  };
+  } catch (error) {
+    console.error('Error durante la carga:', error);
+    alert(`Ocurrió un error: ${error.message}`);
+  } finally {
+    setUploading(false);
+  }
+};
 
   const handleReset = () => {
     setProductData({
       name: '',
+      description: '',
       price: '',
       stock: '',
-      category: '',
-      image: '',
-      description: ''
+      category: ''
     });
+    setImageFile(null);
+
+    // Reseteamos el campo fileInput en el DOM
+    const fileInput = document.getElementById('image');
+    if (fileInput) fileInput.value = '';
   };
 
   return (
@@ -96,7 +153,7 @@ export function ProductForm() {
           </div>
 
           <div className={styles.field}>
-            <label htmlFor="name">Nombre del producto</label>
+            <label htmlFor="name">Nombre del producto *</label>
             <input
               type="text"
               id="name"
@@ -110,7 +167,7 @@ export function ProductForm() {
 
           <div className={styles.row}>
             <div className={styles.field}>
-              <label htmlFor="price">Precio ($)</label>
+              <label htmlFor="price">Precio ($) *</label>
               <input
                 type="number"
                 id="price"
@@ -123,7 +180,7 @@ export function ProductForm() {
             </div>
 
             <div className={styles.field}>
-              <label htmlFor="stock">Stock inicial</label>
+              <label htmlFor="stock">Stock inicial *</label>
               <input
                 type="number"
                 id="stock"
@@ -137,7 +194,7 @@ export function ProductForm() {
           </div>
 
           <div className={styles.field}>
-            <label htmlFor="category">Categoría</label>
+            <label htmlFor="category">Categoría *</label>
             <select
               id="category"
               name="category"
@@ -155,21 +212,21 @@ export function ProductForm() {
             </select>
           </div>
 
+          {/* Campo para seleccionar el archivo de imagen de disco */}
           <div className={styles.field}>
-            <label htmlFor="image">URL de la imagen</label>
+            <label htmlFor="image">Imagen del producto *</label>
             <input
-              type="url"
+              type="file"
               id="image"
               name="image"
-              value={productData.image}
-              onChange={handleChange}
-              placeholder="https://images.unsplash.com/..."
+              accept="image/*"
+              onChange={handleFileChange}
               required
             />
           </div>
 
           <div className={styles.field}>
-            <label htmlFor="description">Descripción</label>
+            <label htmlFor="description">Descripción *</label>
             <textarea
               id="description"
               name="description"
@@ -182,12 +239,21 @@ export function ProductForm() {
           </div>
 
           <div className={styles.actionButtons}>
-            <button type="button" className={styles.cleanBtn} onClick={handleReset}>
+            <button 
+              type="button" 
+              className={styles.cleanBtn} 
+              onClick={handleReset}
+              disabled={uploading}
+            >
               <BroomIcon /> Limpiar
             </button>
 
-            <button type="submit" className={styles.submitBtn}>
-              <CheckIcon /> Guardar
+            <button 
+              type="submit" 
+              className={styles.submitBtn}
+              disabled={uploading}
+            >
+              <CheckIcon /> {uploading ? 'Subiendo...' : 'Guardar'}
             </button>
           </div>
         </form>
@@ -197,7 +263,7 @@ export function ProductForm() {
         isOpen={showModal}
         onClose={() => setShowModal(false)}
         title="¡ Producto Registrado !"
-        message={`El artículo "${savedProductName}" con ID #${nextId - 1} se cargo correctamente en el catálogo.`}
+        message={`El artículo "${savedProductName}" con ID #${nextId - 1} se cargó correctamente con su imagen en ImgBB.`}
         confirmText="Aceptar"
         showCancel={false}
       />
