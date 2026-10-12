@@ -1,0 +1,33 @@
+/* ==========================================================================
+   Estilos de ScrollToBottom.module.css
+   Author: Silvio Jorda
+   Date: 2026-09-30
+========================================================================== */
+
+.scrollBottomBtn {
+  position: fixed;
+  top: 85px; /* Ajusta este valor para que quede justo debajo del Header */
+  right: 2rem;
+  width: 42px;
+  height: 42px;
+  background-color: #8de2d6;
+  color: #111111;
+  border: 2px solid #8de2d6;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+  transition: all 0.25s ease;
+}
+
+.scrollBottomBtn:hover {
+  background-color: transparent;
+  color: #8de2d6;
+  box-shadow: 0 0 12px rgba(141, 226, 214, 0.5);
+  transform: translateY(3px);
+}

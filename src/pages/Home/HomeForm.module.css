@@ -1,0 +1,123 @@
+/* ==========================================================================
+   Estilos de Home.module.css
+   Author: Silvia Jorda
+   Date: 2026-09-30
+========================================================================== */
+
+.homeContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+  color: white;
+  padding: 4rem 2rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.heroTitle {
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+.highlight {
+  color: #8de2d6;
+}
+
+.heroSubtitle {
+  font-size: 1.2rem;
+  color: #ccc;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+}
+
+.heroButton {
+  display: inline-block;
+  background-color: #8de2d6;
+  color: #111;
+  font-weight: bold;
+  padding: 0.8rem 2rem;
+  border-radius: 6px;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.heroButton:hover {
+  background-color: #6fc2b6;
+  transform: translateY(-2px);
+}
+
+/* Features Section */
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.featureCard {
+  background-color: #ffffff;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.featureIcon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.featureTitle {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: #222;
+}
+
+.featureText {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Featured Products Section */
+.featuredSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 0.5rem;
+}
+
+.sectionTitle {
+  font-size: 1.8rem;
+  color: #222;
+}
+
+.viewAllLink {
+  color: #007bff;
+  font-weight: 600;
+}
+
+.viewAllLink:hover {
+  text-decoration: underline;
+}
+
+.loadingText, .errorText {
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.1rem;
+  color: #666;
+}

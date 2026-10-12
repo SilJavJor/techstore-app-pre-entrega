@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "name": "Procesadores",
+    "description": "",
+    "image": ""
+  },
+
+  {
+    "id": 2,
+    "name": "Placas de Video",
+    "description": "Pantalla Quad HD de 144Hz con panel VA y tiempo de respuesta de 1ms, ideal para trabajo y gaming.",
+    "image": ""
+  },
+
+  {
+    "id": 3,
+    "name": "Monitores",
+    "description": "",
+    "image": ""
+  },
+
+  {
+    "id": 4,
+    "name": "Perifericos",
+    "description": "",
+    "image": ""
+  },
+
+  {
+    "id": 5,
+    "name": "Almacenamieto",
+    "description": "",
+    "image": ""
+  },
+
+  {
+    "id": 6,
+    "name": "Disco SSD NVMe 1TB",
+    "description": "",
+    "image": ""
+  },
+
+  {
+    "id": 7,
+    "name": "Componentes de PC",
+    "description": "",
+    "image": ""
+  }
+]

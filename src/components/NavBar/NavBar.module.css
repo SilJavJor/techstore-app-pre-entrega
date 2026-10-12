@@ -1,0 +1,89 @@
+/* ==========================================================================
+   Estilos de NavBar.module.css
+   Author: Silvio Jorda
+   Date: 2026-09-30
+========================================================================== */
+
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.navList {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+}
+
+.navLink {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+}
+
+.navLink:hover {
+  color: #8de2d6;
+  text-decoration: underline;
+  transform: translateY(-1px);
+}
+
+.dropdownContainer {
+  position: relative;
+  cursor: pointer;
+}
+
+.dropdownMenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin: 0; /* Elimina la brecha de aire */
+  padding: 0.5rem 0;
+  background-color: #1a1a1a;
+  border: 1px solid #333333;
+  border-radius: 6px;
+  list-style: none;
+  min-width: 170px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  z-index: 100;
+}
+
+.dropdownMenu::before {
+  content: '';
+  position: absolute;
+  top: -12px;
+  left: 0;
+  width: 100%;
+  height: 12px;
+  background: transparent;
+}
+
+.dropdownContainer:hover .dropdownMenu,
+.dropdownMenu:hover {
+  display: block;
+}
+
+.dropdownLink {
+  display: block;
+  padding: 0.6rem 1rem;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.88rem;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.dropdownLink:hover {
+  background-color: #222222;
+  color: #8de2d6;
+}

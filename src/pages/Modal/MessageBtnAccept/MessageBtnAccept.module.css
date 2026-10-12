@@ -1,0 +1,80 @@
+/* ==========================================================================
+   Estilos de Modal.module.css
+   Autor: Silvio Jorda
+   Fecha: 2026-10-08
+========================================================================== */
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.modalCard {
+  background-color: #1a1a1a;
+  border: 1px solid #333333;
+  border-radius: 12px;
+  padding: 2rem;
+  width: 90%;
+  max-width: 420px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  text-align: center;
+  animation: fadeIn 0.25s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.title {
+  color: #8de2d6;
+  font-size: 1.4rem;
+  margin-bottom: 0.8rem;
+}
+
+.message {
+  color: #dddddd;
+  font-size: 0.98rem;
+  line-height: 1.5;
+  margin-bottom: 1.8rem;
+}
+
+/* Alineación centralizada del botón */
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.acceptBtn {
+  background-color: #8de2d6;
+  color: #111111;
+  border: none;
+  padding: 0.65rem 2.5rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.acceptBtn:hover {
+  background-color: #72c8bc;
+  transform: translateY(-1px);
+}

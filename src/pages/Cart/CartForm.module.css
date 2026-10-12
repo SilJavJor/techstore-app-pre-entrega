@@ -1,0 +1,96 @@
+/* ==========================================================================
+   Nuevos estilos para el botón Seguir Comprando
+========================================================================== */
+
+  .container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.title {
+  font-size: 2rem;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 0.5rem;
+}
+
+.empty {
+  text-align: center;
+  padding: 3rem;
+}
+
+.itemRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid #eee;
+}
+
+.itemImage {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.itemInfo {
+  flex: 1;
+  margin-left: 1rem;
+}
+
+.removeButton {
+  background: none;
+  border: none;
+  color: #ff4d4f;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid #eee;
+  margin-top: 1rem;
+}
+
+.total {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.clearButton {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.actionButtons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.continueButton {
+  display: inline-block;
+  background-color: #8de2d6;
+  color: #111111;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.continueButton:hover {
+  background-color: #72c8bc;
+  transform: translateY(-1px);
+}

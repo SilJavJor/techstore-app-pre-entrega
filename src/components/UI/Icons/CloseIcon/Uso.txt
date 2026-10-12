@@ -1,0 +1,7 @@
+
+// Uso simple con los valores por defecto:
+<CloseIcon />
+
+<button className={styles.cancelBtn} onClick={onClose}>
+  <CloseIcon size={18} color="#ff4d4f" /> Cancelar
+</button>

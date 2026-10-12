@@ -1,0 +1,75 @@
+/* ==========================================================================
+   Estilos de Footer.module.css
+   Author: Silvio Jorda
+   Date: 2026-09-30
+========================================================================== */
+
+.footer {
+  background-color: #111;
+  color: #fff;
+  padding: 2rem 1rem;
+  margin-top: auto;
+  border-top: 1px solid #222;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap; /* Mantiene la adaptabilidad en pantallas pequeñas */
+}
+
+/* Columna Izquierda */
+.brandInfo {
+  flex: 1;
+  min-width: 250px;
+  text-align: left;
+}
+
+.title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 0.3rem;
+}
+
+.description {
+  color: #aaa;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* Columna Central */
+.centerNav {
+  flex: 1;
+  text-align: center;
+  min-width: 180px;
+}
+
+.teamLink {
+  color: #8de2d6; /* Verde / Turquesa seleccionado */
+  font-weight: 600;
+  font-size: 1rem;
+  transition: color 0.2s ease, transform 0.2s ease;
+  display: inline-block;
+}
+
+.teamLink:hover {
+  color: #6fc2b6;
+  text-decoration: underline;
+  transform: translateY(-1px);
+}
+
+/* Columna Derecha */
+.copyright {
+  flex: 1;
+  text-align: right;
+  font-size: 0.85rem;
+  color: #888;
+  min-width: 220px;
+  margin: 0;
+}

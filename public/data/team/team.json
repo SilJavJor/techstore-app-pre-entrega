@@ -1,0 +1,43 @@
+
+
+[
+  {
+    "id": 1,
+    "name": "Silvio Jorda",
+    "role": "Lead Developer",
+    "email": "silvio.jorda@techstore.com",
+    "photo": "/images/teams/lead-developer-male.png"
+  },
+
+  {
+    "id": 2,
+    "name": "Carlos Gómez",
+    "role": "Project Manager",
+    "email": "carlos.gomez@techstore.com",
+    "photo": "/images/teams/project-manager-male.png"
+  },
+
+  {
+    "id": 3,
+    "name": "Angel Colletti",
+    "role": "Frontend Developer",
+    "email": "angel.collett@techstore.com",
+    "photo": "/images/teams/frontend-developer-male.png"
+  },
+
+  {
+    "id": 4,
+    "name": "Mateo Rossi",
+    "role": "Backend Developer",
+    "email": "mateo.ross@techstore.com",
+    "photo": "/images/teams/backend-developer-male.png"
+  },
+
+  {
+    "id": 5,
+    "name": "Ana Martínez",
+    "role": "UI/UX   Designer",
+    "email": "ana.martinez@techstore.com",
+    "photo": "/images/teams/designer-ux-ui-famale.png"
+  }
+]

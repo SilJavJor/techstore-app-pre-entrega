@@ -1,0 +1,144 @@
+/* ==========================================================================
+   Estilos de CategoryForm.module.css
+   Descripción: Hoja de estilos para el formulario de registro de categorías.
+   Autor: Silvio Jorda
+   Fecha: 2026-10-10
+========================================================================== */
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  padding: 2.5rem 1rem;
+}
+
+.card {
+  background-color: #1a1a1a;
+  border: 1px solid #333333;
+  border-radius: 10px;
+  padding: 2.5rem 2rem;
+  width: 100%;
+  max-width: 650px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  color: #ffffff;
+  box-sizing: border-box;
+}
+
+.title {
+  font-size: 1.8rem;
+  text-align: center;
+  color: #8de2d6;
+  margin-bottom: 0.4rem;
+}
+
+.subtitle {
+  font-size: 0.9rem;
+  text-align: center;
+  color: #aaaaaa;
+  margin-bottom: 1.8rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.field label {
+  font-size: 0.85rem;
+  color: #dddddd;
+  font-weight: 500;
+}
+
+.field input,
+.field textarea {
+  background-color: #111111;
+  border: 1px solid #444444;
+  border-radius: 6px;
+  padding: 0.75rem;
+  color: #ffffff;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s ease;
+  font-family: inherit;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.field input:focus,
+.field textarea:focus {
+  border-color: #8de2d6;
+}
+
+/* Campo de ID auto-generado deshabilitado */
+.readOnlyInput {
+  background-color: #0d0d0d !important;
+  border-color: #2a2a2a !important;
+  color: #8de2d6 !important;
+  font-weight: 700;
+  cursor: not-allowed;
+  user-select: none;
+}
+
+.actionButtons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+/* Botón Limpiar con ícono de escoba */
+.cleanBtn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  color: #cccccc;
+  border: 1px solid #555555;
+  padding: 0.85rem;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cleanBtn:hover {
+  border-color: #8de2d6;
+  color: #8de2d6;
+  background-color: rgba(141, 226, 214, 0.05);
+}
+
+.cleanBtn:hover svg {
+  stroke: #8de2d6;
+}
+
+/* Botón Guardar */
+.submitBtn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: #8de2d6;
+  color: #111111;
+  border: none;
+  padding: 0.85rem;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.submitBtn:hover {
+  background-color: #72c8bc;
+  transform: translateY(-1px);
+}

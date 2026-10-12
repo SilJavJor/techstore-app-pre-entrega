@@ -1,0 +1,28 @@
+/* ==========================================================================
+   Estilos de index.css
+   Descripcion: Archivo de estilos globales para la aplicación web.
+   Author: Silvio Jorda
+   Date: 2026-09-30
+========================================================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}

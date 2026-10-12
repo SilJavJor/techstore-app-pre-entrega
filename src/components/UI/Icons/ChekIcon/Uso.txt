@@ -1,0 +1,6 @@
+// Uso simple con los valores por defecto:
+<CheckIcon />
+
+<button className={styles.acceptBtn} onClick={handleConfirm}>
+  <CheckIcon size={18} color="#111111" /> Aceptar
+</button>

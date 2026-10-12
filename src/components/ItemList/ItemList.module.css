@@ -1,0 +1,13 @@
+/* ==========================================================================
+   Estilos de ItemList.module.css
+   Author: Nombre 
+   Date: 2026-09-30
+========================================================================== */
+
+.listContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  padding: 1rem 0;
+}

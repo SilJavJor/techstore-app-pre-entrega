@@ -1,0 +1,76 @@
+/* ==========================================================================
+   Estilos de OurTeam.module.css
+   Author: Silvio Jorda
+   Date: 2026-09-30
+========================================================================== */
+.teamSection {
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.title {
+  font-size: 1.8rem;
+  color: #222;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  color: #666;
+  margin-bottom: 2rem;
+  font-size: 0.95rem;
+}
+
+.grid {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.card {
+  background-color: #ffffff;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 1.5rem;
+  width: 220px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border: 3px solid #8de2d6;
+}
+
+.memberName {
+  font-size: 1.1rem;
+  color: #1a1a1a;
+  margin-bottom: 0.2rem;
+  display: block;
+}
+
+.memberRole {
+  color: #007bff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.memberEmail {
+  font-size: 0.8rem;
+  color: #888;
+}
+
+.statusMessage {
+  padding: 2rem;
+  color: #666;
+}

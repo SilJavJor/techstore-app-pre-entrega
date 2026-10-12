@@ -1,0 +1,5 @@
+// Uso simple con los valores por defecto:
+<StarOutLineIcon />
+
+// O con tamaño personalizado:
+<StarOutLineIcon size={26} color="#8de2d6" />

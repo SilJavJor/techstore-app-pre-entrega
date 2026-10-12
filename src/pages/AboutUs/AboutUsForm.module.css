@@ -1,0 +1,121 @@
+/* ==========================================================================
+   Estilos de AboutUs.module.css
+   Author: Silvio Jorda
+   Date: 2026-09-30
+========================================================================== */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  padding: 1rem 0;
+}
+
+.header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 2.2rem;
+  color: #1a1a1a;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  color: #666;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.card {
+  background-color: #ffffff;
+  border: 1px solid #e1e1e1;
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.avatar {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1.2rem;
+  border: 4px solid #8de2d6;
+}
+
+.memberName {
+  font-size: 1.25rem;
+  color: #111;
+  margin-bottom: 0.3rem;
+  display: block;
+}
+
+.memberRole {
+  color: #007bff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  display: block;
+  margin-bottom: 0.8rem;
+}
+
+.memberEmail {
+  color: #666;
+  font-size: 0.85rem;
+  word-break: break-all;
+}
+
+.statusMessage {
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 4rem;
+  color: #555;
+}
+
+
+
+.header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+
+
+
+.memberCard {
+  background-color: #ffffff;
+  border: 1px solid #e1e1e1;
+  border-radius: 10px;
+  padding: 1.5rem;
+  width: 260px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  /* Transición suave para elevación, borde y sombra */
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.memberCard:hover {
+  /* Eleva la tarjeta simulando relieve */
+  transform: translateY(-6px);
+  /* Cambia el borde al color turquesa/verde agua de la marca */
+  border-color: #8de2d6;
+  /* Aplica sombra con resplandor en tono turquesa para destacar el relieve */
+  box-shadow: 0 8px 20px rgba(141, 226, 214, 0.35), 0 4px 12px rgba(0, 0, 0, 0.1);
+}

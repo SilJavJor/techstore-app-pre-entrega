@@ -1,0 +1,49 @@
+/* ==========================================================================
+   Estilos de NotFound.module.css
+   Author: Silvio Jorda
+   Date: 2026-09-30
+========================================================================== */
+
+.container {
+  text-align: center;
+  padding: 4rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
+}
+
+.errorCode {
+  font-size: 5rem;
+  font-weight: bold;
+  color: #ff4d4f;
+  margin: 0;
+  line-height: 1;
+}
+
+.title {
+  font-size: 2rem;
+  margin: 1rem 0 0.5rem;
+  color: #333;
+}
+
+.description {
+  color: #666;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+.button {
+  display: inline-block;
+  background-color: #007bff;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}
