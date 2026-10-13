@@ -5,33 +5,32 @@
   Date: 2026-09-30
 ========================================================================== */
 
-import { useState, useEffect } from 'react';
+/* ==========================================================================
+  Componente ProductDetailForm.jsx
+  Descripción: Muestra el detalle de un producto consumiendo el DataContext.
+  Autor: Silvio Jorda
+  Fecha: 2026-10-13
+========================================================================== */
+
+import { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
+import { useData } from '../../context/DataContext/DataContext';
 import { useCart } from '../../context/CartContext/CartContext';
 import styles from './ProductDetailForm.module.css';
 
 export function ProductDetailForm() {
   const { id } = useParams();
+  const { products, loading } = useData();
   const { addToCart } = useCart();
 
-  const [producto, setProducto] = useState(null);
-  const [loading, setLoading] = useState(true);
   const [cantidad, setCantidad] = useState(1);
   const [added, setAdded] = useState(false);
 
-  useEffect(() => {
-    fetch('/data/products/products.json')
-      .then((res) => res.json())
-      .then((data) => {
-        const itemEncontrado = data.find((p) => p.id === parseInt(id));
-        setProducto(itemEncontrado);
-      })
-      .catch((err) => console.error(err))
-      .finally(() => setLoading(false));
-  }, [id]);
+  // Buscamos el producto convirtiendo ambos IDs a String
+  const product = products ? products.find((p) => String(p.id) === String(id)) : null;
 
   const incrementar = () => {
-    if (cantidad < producto.stock) setCantidad(cantidad + 1);
+    if (product && cantidad < product.stock) setCantidad(cantidad + 1);
   };
 
   const decrementar = () => {
@@ -39,25 +38,29 @@ export function ProductDetailForm() {
   };
 
   const handleAddToCart = () => {
-    addToCart(producto, cantidad);
-    setAdded(true);
+    if (product) {
+      addToCart(product, cantidad);
+      setAdded(true);
+    }
   };
 
   if (loading) return <p style={{ textAlign: 'center', padding: '3rem' }}>Cargando detalle...</p>;
-  if (!producto) return <p style={{ textAlign: 'center', padding: '3rem' }}>Producto no encontrado.</p>;
+  if (!product) return <p style={{ textAlign: 'center', padding: '3rem' }}>Producto no encontrado.</p>;
 
   return (
     <div className={styles.container}>
-      <img src={producto.image} alt={producto.name} className={styles.image} />
+      <img src={product.image} alt={product.name} className={styles.image} />
 
       <div className={styles.details}>
-        <h1 className={styles.title}>{producto.name}</h1>
+        <h1 className={styles.title}>{product.name}</h1>
 
-        <p className={styles.price}>${producto.price.toLocaleString()}</p>
+        <p className={styles.price}>
+          ${Number(product.price).toLocaleString('es-AR')}
+        </p>
 
-        <p className={styles.description}>{producto.description}</p>
+        <p className={styles.description}>{product.description}</p>
 
-        <p style={{ color: '#666' }}>Stock disponible: {producto.stock}</p>
+        <p style={{ color: '#666' }}>Stock disponible: {product.stock}</p>
 
         {!added ? (
           <div>

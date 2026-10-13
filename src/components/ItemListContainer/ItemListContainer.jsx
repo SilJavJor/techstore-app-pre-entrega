@@ -20,6 +20,7 @@ export function ItemListContainer({ greeting }) {
       <h2>{greeting}</h2>
 
       <ItemList products={products} />
+
     </div>
   );
 }

@@ -8,6 +8,13 @@
   Date: 2026-09-30
 ========================================================================== */
 
+/* ==========================================================================
+  Componente Item.jsx
+  Descripción: Tarjeta individual para cada producto del catálogo.
+  Autor: Silvio Jorda
+  Fecha: 2026-10-13
+========================================================================== */
+
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useCart } from '../../context/CartContext/CartContext';
@@ -15,16 +22,17 @@ import { StarInLineIcon } from '../UI/Icons/StarInLineIcon/StarInLineIcon';
 import { StarOutlineIcon } from '../UI/Icons/StarOutLineIcon/StarOutLineIcon';
 import styles from './Item.module.css';
 
-export function Item({ id, name, price, stock, image }) {
+export function Item({ id, name, price, stock, image, description, category }) {
   const { addToCart } = useCart();
+  const [isFavorite, setIsFavorite] = useState(false);
 
   const handleAddToCart = () => {
-    if (addToCart && product) {
+    if (addToCart) {
+      // Recomponemos el objeto del producto con las props
+      const product = { id, name, price, stock, image, description, category };
       addToCart(product, 1);
     }
   };
-
-  const [isFavorite, setIsFavorite] = useState(false);
 
   const toggleFavorite = () => {
     setIsFavorite(!isFavorite);
@@ -33,19 +41,14 @@ export function Item({ id, name, price, stock, image }) {
   return (
     <div className={styles.card}>
       <button className={styles.favButton} onClick={toggleFavorite} title="Favorito">
-        {/* {isFavorite ? '⭐' : '☆'} */}
-        {isFavorite ? (
-          <StarInLineIcon />
-        ) : (
-          <StarOutlineIcon />
-        )}
+        {isFavorite ? <StarInLineIcon /> : <StarOutlineIcon />}
       </button>
 
       <img src={image} alt={name} className={styles.image} />
 
       <div>
         <h3 className={styles.title}>{name}</h3>
-        <p className={styles.price}>${price.toLocaleString()}</p>
+        <p className={styles.price}>${Number(price).toLocaleString('es-AR')}</p>
         <p className={styles.stock}>Stock disponible: {stock}</p>
       </div>
 
