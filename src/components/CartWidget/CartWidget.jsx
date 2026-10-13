@@ -14,7 +14,6 @@ export function CartWidget() {
 
   return (
     <Link to="/cart" className={styles.cartWidgetLink}>
-
       <span className={styles.cartIcon}>🛒</span>
 
       {totalQuantity > 0 && (
