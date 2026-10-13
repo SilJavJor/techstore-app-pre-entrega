@@ -11,8 +11,8 @@
 
 ## 🚀 Demo e Instalación
 
-- 🌐 **Deploy en Vivo:** [TechStore en Netlify](https://pre-entrega-react-js-silvio.netlify.app/)
-- 💻 **Repositorio Oficial:** [GitHub - TechStore](https://github.com/silviojorda/pre-entrega-react-js-silvio)
+- 🌐 **Deploy en Vivo:** [TechStore en Netlify](https://react-js-talentotech.netlify.app/)
+- 💻 **Repositorio Oficial:** [GitHub - TechStore](https://github.com/SilJavJor/techstore-app-pre-entrega)
 
 ---
 
@@ -76,8 +76,8 @@ src/
 
 1. **Clonar el repositorio:**
    ```bash
-   git clone https://github.com/silviojorda/pre-entrega-react-js-silvio.git
-   cd pre-entrega-react-js-silvio
+   git clone https://github.com/SilJavJor/techstore-app-pre-entrega.git
+   cd /techstore-app-pre-entrega
    ```
 
 2. **Instalar dependencias:**
