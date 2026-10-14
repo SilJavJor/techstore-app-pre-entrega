@@ -60,7 +60,6 @@
   margin-bottom: 1rem;
 }
 
-/* Contenedor que agrupa los botones en la tarjeta con separación */
 .buttonContainer {
   display: flex;
   flex-direction: column;
@@ -118,4 +117,23 @@
 
 .addButton:hover {
   background-color: #333333;
+}
+/* Link contenedor de la imagen */
+.imageLink {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.imageLink:hover .image {
+  transform: scale(1.05);
 }
