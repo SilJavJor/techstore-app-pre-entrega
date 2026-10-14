@@ -38,7 +38,6 @@ export function Item({ id, name, price, stock, image, description, category }) {
         {isFavorite ? <StarInLineIcon /> : <StarOutlineIcon />}
       </button>
 
-      {/* Envolvemos la imagen dentro de un Link con la ruta hacia el detalle */}
       <Link to={`/product/${id}`} className={styles.imageLink}>
         {!imageLoaded && (
           <div className={styles.imagePlaceholder}>
