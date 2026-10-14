@@ -1,18 +1,12 @@
 /* eslint-disable no-undef */
 /* ==========================================================================
   Componente Item.jsx
-  Descripción: Componente que representa un producto individual en la lista 
+  Descripcion: Componente que representa un producto individual en la lista 
     de productos. Contiene información del producto y un botón para marcarlo 
-    como favorito.
+    como favorito. Permite hacer clic tanto en el botón como en la imagen 
+    para ir al detalle.
   Autor: Silvio Jorda
   Date: 2026-09-30
-========================================================================== */
-
-/* ==========================================================================
-  Componente Item.jsx
-  Descripción: Tarjeta individual para cada producto del catálogo.
-  Autor: Silvio Jorda
-  Fecha: 2026-10-13
 ========================================================================== */
 
 import { useState } from 'react';
@@ -25,10 +19,10 @@ import styles from './Item.module.css';
 export function Item({ id, name, price, stock, image, description, category }) {
   const { addToCart } = useCart();
   const [isFavorite, setIsFavorite] = useState(false);
+  const [imageLoaded, setImageLoaded] = useState(false);
 
   const handleAddToCart = () => {
     if (addToCart) {
-      // Recomponemos el objeto del producto con las props
       const product = { id, name, price, stock, image, description, category };
       addToCart(product, 1);
     }
@@ -44,7 +38,22 @@ export function Item({ id, name, price, stock, image, description, category }) {
         {isFavorite ? <StarInLineIcon /> : <StarOutlineIcon />}
       </button>
 
-      <img src={image} alt={name} className={styles.image} />
+      {/* Envolvemos la imagen dentro de un Link con la ruta hacia el detalle */}
+      <Link to={`/product/${id}`} className={styles.imageLink}>
+        {!imageLoaded && (
+          <div className={styles.imagePlaceholder}>
+            <span>Cargando...</span>
+          </div>
+        )}
+
+        <img
+          src={image}
+          alt={name}
+          className={`${styles.image} ${imageLoaded ? styles.fadeIn : styles.hidden}`}
+          onLoad={() => setImageLoaded(true)}
+          loading="lazy"
+        />
+      </Link>
 
       <div>
         <h3 className={styles.title}>{name}</h3>
@@ -56,7 +65,7 @@ export function Item({ id, name, price, stock, image, description, category }) {
         <Link to={`/product/${id}`} className={styles.detailsButton}>
           Ver Detalle
         </Link>
-  
+
         <button className={styles.addButton} onClick={handleAddToCart}>
           Agregar al Carrito
         </button>
