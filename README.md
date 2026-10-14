@@ -39,16 +39,21 @@ src/
 │   ├── Item/           # Tarjeta individual de producto
 │   ├── ItemList/       # Mapeo y grilla de catálogo
 │   ├── NavBar/         # Navegación principal y Widget del Carrito
-│   └── UI/ Icons/      # Componentes SVG vectoriales (BroomIcon, CheckIcon, etc.)
+│   ├── UI/ Icons/      # Componentes SVG vectoriales (BroomIcon, CheckIcon, etc.)
+│   └── etc.../         
 ├── context/            # Estado global con Context API
 │   ├── DataContext/    # Gestión centralizada de Productos y Equipo
 │   └── CartContext/    # Gestión del Carrito (Unidades, Totales, Métodos)
-├── views/              # Vistas principales de rutas
+│   └── etc.../         
+├── pages/              # Vistas principales de rutas
 │   ├── HomeForm/       # Página de Inicio con Productos Destacados
 │   ├── OurTeam/        # Sección de la Empresa / Nuestro Equipo
 │   ├── ProductForm/    # Alta administrativa de productos + Subida a ImgBB
-│   └── ItemDetail/     # Vista detallada de productos
+│   ├── ProductDetail/  # Vista detallada de productos
+│   └── etc.../         
 └── App.jsx             # Definición de Rutas (React Router DOM)
+└── etc...
+
 ```
 
 ---
@@ -101,7 +106,6 @@ src/
 ## 👤 Autor
 
 - **Silvio Jorda** - *Desarrollador React & Estudiante de Software*
-- GitHub: [@silviojorda](https://github.com/silviojorda)
-
+- GitHub: ** [GitHub - Silvio Jorda](https://github.com/SilJavJor)
 ---
 *TechStore - Proyecto desarrollado en el marco de la cursada de React JS.*
